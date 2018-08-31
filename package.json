@@ -1,0 +1,69 @@
+{
+  "name": "animatron",
+  "version": "0.0.0",
+  "description": "Various animation helpers for React-based projects",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "lint": "standard",
+    "prebuild": "npm run clean",
+    "build": "babel src --out-dir lib",
+    "watch": "babel --watch src --out-dir lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "animation",
+    "react",
+    "motion",
+    "transition",
+    "page"
+  ],
+  "author": "Matt Styles",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattstyles/animatron"
+  },
+  "bugs": "https://github.com/mattstyles/animatron/issues",
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions"
+            ]
+          },
+          "loose": true
+        }
+      ],
+      "react"
+    ],
+    "plugins": [
+      "transform-react-require",
+      "transform-class-properties"
+    ]
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "**/node_modules/**",
+      "**/lib/"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  },
+  "peerDependencies": {
+    "react": "^16",
+    "react-transition-group": "^2.4.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2"
+  }
+}
