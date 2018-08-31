@@ -3,7 +3,7 @@ import {Signal} from 'raid'
 import {createActions} from 'raid-navigator'
 import createHistory from 'history/createMemoryHistory'
 
-import {TRANSITIONS} from '../../src/page'
+import {TRANSITIONS} from '../../src'
 
 export const signal = Signal.of()
 export const history = createHistory()

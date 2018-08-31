@@ -9,9 +9,10 @@ import {signal, events, history, routes} from './utils/navigation'
 import {HomeView, SettingsView} from './utils/views'
 
 import {
-  PageTransition,
-  PageGroup
-} from '../src/page'
+  PageGroup,
+  mapChildren,
+  childFactory
+} from '../src'
 
 setGlobalStyling()
 
@@ -27,18 +28,6 @@ signal.register(safe((state, event) => {
 }))
 
 const el = document.querySelector('.js-main')
-
-const mapChildren = child => (
-  <PageTransition
-    key={child.key}
-    route={child.props.route}
-  >
-    {child}
-  </PageTransition>
-)
-
-const childFactory = transition => child =>
-  React.cloneElement(child, {transition})
 
 signal.observe(state => {
   render(

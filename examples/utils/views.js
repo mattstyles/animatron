@@ -1,9 +1,10 @@
 
-import {routes, push, pop} from './navigation'
+import styled from 'styled-components'
 
+import {routes, push, pop} from './navigation'
 import {View, H1, Text, Button} from './components'
 
-const PageView = View.extend`
+const PageView = styled(View)`
   background: rgb(244, 244, 244);
   height: 100vh;
   boxSizing: border-box;
