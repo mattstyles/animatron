@@ -17,8 +17,9 @@ export const events = {
 
 export const routes = {
   home: '/',
-  settings: '/settings',
-  about: '/about'
+  pageTransitions: '/pageTransitions',
+  usingPageTransitions: '/usingPageTransitions',
+  usingWithNavigator: '/usingWithNavigator'
 }
 
 export const push = ({

@@ -1,7 +1,9 @@
 
 import styled, {injectGlobal} from 'styled-components'
+import oc from 'open-color'
 
 const font = `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`
+const monospace = `Source Code Pro, Consolas, monospace`
 
 export const setGlobalStyling = () => {
   injectGlobal`
@@ -10,8 +12,8 @@ export const setGlobalStyling = () => {
     }
     body {
       margin: 0;
-      background: rgb(244, 244, 244);
-      color: rgb(64, 64, 64);
+      background: ${`linear-gradient(30deg, ${oc.orange[3]}, ${oc.red[7]} 75%)`};
+      color: ${oc.gray[8]};
       font-family: ${font};
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -24,11 +26,28 @@ export const setGlobalStyling = () => {
   `
 }
 
+export const App = styled.div`
+  display: flex;
+  flex: 1;
+  max-width: 480px;
+
+  @media (min-width: 440px) {
+    position: absolute;
+    width: 375px;
+    height: 667px;
+    border: 16px solid rgba(0, 0, 0, 0.85);
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+`
+
 export const View = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
   padding: ${props => props.isPadded && '30px'};
+  flex: ${props => props.noFlex && 'none'};
 `
 
 export const H1 = styled.h1`
@@ -36,17 +55,92 @@ export const H1 = styled.h1`
 `
 
 export const Text = styled.p`
-  font-size: 2.1rem;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin: 0 0 0.8rem 0;
+  margin-bottom: ${props => props.flush && '0'};
+`
+
+export const TextBlock = styled.div`
+  background: ${oc.white};
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0.8rem 1.6rem;
+  background: ${props => props.inverted && oc.gray[8]};
+  color: ${props => props.inverted && oc.white};
+`
+
+export const CodeBlock = styled.pre`
+  background: ${oc.gray[8]};
+  color: ${oc.gray[0]};
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0.8rem 1.6rem;
+  font-family: ${monospace};
+  font-size: 1.8rem;
+  overflow-x: hidden;
 `
 
 export const Button = styled.button`
-  font-size: 2.1rem;
+  position: relative;
+  font-size: 1.8rem;
   line-height: 2.5;
-  background: rgb(70, 150, 180);
-  color: rgb(255, 255, 255);
+  background: ${oc.blue[5]};
+  color: ${oc.white};
   font-weight: 500;
-  letter-spacing: 1.5;
+  letter-spacing: 1.2;
   text-transform: uppercase;
   padding: 0 20px;
   border-radius: 200px;
+  border: none;
+  cursor: pointer;
+
+  :hover {
+    background: ${oc.blue[7]};
+  }
+
+  :active {
+    background: ${oc.blue[8]};
+  }
+`
+
+export const Title = styled.h1`
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: -0.5;
+  background: ${oc.gray[0]};
+  color: ${oc.gray[7]};
+  padding: 0.8rem 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  text-align: center;
+`
+
+export const NavGroup = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`
+
+export const NavItem = styled.li`
+  background: ${oc.white};
+  font-size: 1.8rem;
+  padding: 0 1.6rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  line-height: 2.5;
+
+  :after {
+    content: '>';
+    float: right;
+    font-family: ${monospace};
+    color: ${oc.gray[5]};
+  }
+`
+
+export const NavBack = styled(NavItem)`
+  :after {
+    content: '<';
+    float: left;
+    font-family: ${monospace};
+    color: ${oc.gray[5]};
+    margin-right: 1.6rem;
+  }
 `
