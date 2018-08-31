@@ -9,6 +9,7 @@
     "prebuild": "npm run clean",
     "build": "babel src --out-dir lib",
     "watch": "babel --watch src --out-dir lib",
+    "start": "DEBUG=true parcel examples/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -38,6 +39,7 @@
           "loose": true
         }
       ],
+      "stage-3",
       "react"
     ],
     "plugins": [
@@ -58,8 +60,20 @@
     "babel-eslint": "^9.0.0",
     "babel-plugin-styled-components": "^1.6.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-require": "^1.0.1",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-preset-urban": "^1.0.1",
+    "history": "^4.7.2",
+    "parcel-bundler": "^1.9.7",
+    "raid": "^2.13.0",
+    "raid-addons": "^2.13.0",
+    "raid-navigator": "^2.13.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-transition-group": "^2.4.0",
+    "styled-components": "^3.4.5"
   },
   "peerDependencies": {
     "react": "^16",
