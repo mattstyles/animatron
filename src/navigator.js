@@ -9,7 +9,7 @@ import {PageTransition} from './page'
 
 export const mapChildren = child => (
   <PageTransition
-    key={child.key}
+    key={child.key || child.props.route}
     route={child.props.route}
   >
     {child}
