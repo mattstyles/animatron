@@ -12,12 +12,16 @@ export const setGlobalStyling = () => {
     }
     body {
       margin: 0;
-      background: ${`linear-gradient(30deg, ${oc.orange[3]}, ${oc.red[7]} 75%)`};
+      background: ${oc.gray[1]};
       color: ${oc.gray[8]};
       font-family: ${font};
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       display: flex;
+
+      @media (min-width: 440px) {
+        background: ${`linear-gradient(30deg, ${oc.orange[3]}, ${oc.red[7]} 75%)`};
+      }
     }
     .main {
       display: flex;
@@ -48,6 +52,7 @@ export const View = styled.div`
   flex-direction: column;
   padding: ${props => props.isPadded && '30px'};
   flex: ${props => props.noFlex && 'none'};
+  display: ${props => props.noFlex && 'block'};
 `
 
 export const H1 = styled.h1`
@@ -65,8 +70,10 @@ export const TextBlock = styled.div`
   background: ${oc.white};
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding: 0.8rem 1.6rem;
+  margin: 1.6rem 0;
   background: ${props => props.inverted && oc.gray[8]};
   color: ${props => props.inverted && oc.white};
+  margin: ${props => props.flush && '0'};
 `
 
 export const CodeBlock = styled.pre`
@@ -74,9 +81,10 @@ export const CodeBlock = styled.pre`
   color: ${oc.gray[0]};
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding: 0.8rem 1.6rem;
+  margin: 1.6rem 0;
   font-family: ${monospace};
   font-size: 1.8rem;
-  overflow-x: hidden;
+  overflow-x: scroll;
 `
 
 export const Button = styled.button`

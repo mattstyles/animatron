@@ -42,16 +42,18 @@ export class SimplePageTransitionExample extends Component {
           })}>Spartacus</Choice>
         </Block>
         <Block flush style={{maxHeight: 100}}>
-          <Text>Rendering component:</Text>
+          <TextBlock inverted flush>
+            <Text>Rendering component:</Text>
+          </TextBlock>
           <PageGroup childFactory={childFactory(this.state.transition)}>
             {this.state.route === 'one' && (
               <PageTransition>
-                <TextBlock inverted><Text flush>I am Cornholio</Text></TextBlock>
+                <TextBlock inverted flush><Text flush>I am Cornholio</Text></TextBlock>
               </PageTransition>
             )}
             {this.state.route === 'two' && (
               <PageTransition>
-                <TextBlock inverted><Text flush>I am Spartacus</Text></TextBlock>
+                <TextBlock inverted flush><Text flush>I am Spartacus</Text></TextBlock>
               </PageTransition>
             )}
           </PageGroup>
