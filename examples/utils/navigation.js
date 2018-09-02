@@ -18,6 +18,8 @@ export const events = {
 export const routes = {
   home: '/',
   pageTransitions: '/pageTransitions',
+  fadeTransition: '/pageTransitions/fade',
+  pageInTransition: '/pageTransitions/pageIn',
   usingPageTransitions: '/usingPageTransitions',
   usingWithNavigator: '/usingWithNavigator'
 }

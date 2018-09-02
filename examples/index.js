@@ -9,6 +9,8 @@ import {signal, events, history, routes} from './utils/navigation'
 import {
   HomeView,
   PageTransitionsView,
+  FadeTransition,
+  PageInTransition,
   UsingPageTransitions,
   UsingWithNavigator
 } from './utils/views'
@@ -50,6 +52,8 @@ signal.observe(state => {
       >
         <HomeView route={routes.home} />
         <PageTransitionsView route={routes.pageTransitions} />
+        <FadeTransition route={routes.fadeTransition} />
+        <PageInTransition route={routes.pageInTransition} />
         <UsingPageTransitions route={routes.usingPageTransitions} />
         <UsingWithNavigator route={routes.usingWithNavigator} />
       </Navigator>

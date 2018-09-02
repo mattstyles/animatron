@@ -6,6 +6,8 @@ import {routes, push, pop} from './navigation'
 import {View, TextBlock, Text, CodeBlock, Title, NavGroup, NavItem, NavBack} from './components'
 import {SimplePageTransitionExample} from './simpleRoutingExample'
 
+import {TRANSITIONS} from '../../src'
+
 const PageView = styled(View)`
   background: ${oc.gray[1]};
   overflow-y: scroll;
@@ -46,6 +48,42 @@ export const TRANSITIONS = {
   MODAL: 'modal'
 }
     `}</CodeBlock>
+    <NavGroup>
+      <NavItem onClick={push({
+        route: routes.fadeTransition,
+        transition: TRANSITIONS.FADE
+      })}>Fade</NavItem>
+      <NavItem onClick={push({
+        route: routes.pageInTransition
+      })}>Page In Transitions</NavItem>
+    </NavGroup>
+  </PageView>
+)
+
+export const FadeTransition = () => (
+  <PageView>
+    <Title>Fade</Title>
+    <NavGroup>
+      <NavBack onClick={pop({
+        transition: TRANSITIONS.FADE
+      })}>Back</NavBack>
+    </NavGroup>
+    <TextBlock>
+      <Text flush>This transition has faded in, it has still been added to the navigation stack.</Text>
+    </TextBlock>
+  </PageView>
+)
+
+export const PageInTransition = () => (
+  <PageView>
+    <Title>Page In</Title>
+    <NavGroup>
+      <NavBack onClick={pop({})}>Back</NavBack>
+    </NavGroup>
+    <TextBlock>
+      <Text>This transition has transitioned in from the right-hand side, it has still been added to the navigation stack.</Text>
+      <Text flush>Hit back to see the <code>Page Out</code> transition.</Text>
+    </TextBlock>
   </PageView>
 )
 
