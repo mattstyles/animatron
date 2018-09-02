@@ -11,6 +11,11 @@ export {
 } from './navigator'
 
 export {
+  setStyles,
+  setDelayedStyles
+} from './helpers'
+
+export {
   Animate,
   AnimateGroup
 } from './animate'
