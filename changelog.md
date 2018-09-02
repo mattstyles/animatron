@@ -1,6 +1,7 @@
 
 #
 
+* _add_ expose style helpers
 * _add_ add appear up component
 * _add_ fade animation component
 
