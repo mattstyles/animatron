@@ -4,8 +4,8 @@
   "description": "Various animation helpers for React-based projects",
   "main": "lib/index.js",
   "scripts": {
-    "clean": "rimraf lib",
-    "predeploy": "NODE_ENV=production parcel build examples/index.html",
+    "clean": "rimraf lib && rimraf dist",
+    "predeploy": "npm run clean && NODE_ENV=production parcel build examples/index.html",
     "deploy": "gh-pages -d dist",
     "lint": "standard",
     "prebuild": "npm run clean",
