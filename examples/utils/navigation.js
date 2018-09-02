@@ -20,6 +20,7 @@ export const routes = {
   pageTransitions: '/pageTransitions',
   fadeTransition: '/pageTransitions/fade',
   pageInTransition: '/pageTransitions/pageIn',
+  instantTransition: '/pageTransitions/instant',
   usingPageTransitions: '/usingPageTransitions',
   usingWithNavigator: '/usingWithNavigator'
 }

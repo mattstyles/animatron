@@ -37,6 +37,19 @@ export const PageTransitionsView = () => (
     <NavGroup>
       <NavBack onClick={pop({})}>Back</NavBack>
     </NavGroup>
+    <NavGroup>
+      <NavItem onClick={push({
+        route: routes.instantTransition,
+        transition: TRANSITIONS.INSTANT
+      })}>Instant</NavItem>
+      <NavItem onClick={push({
+        route: routes.fadeTransition,
+        transition: TRANSITIONS.FADE
+      })}>Fade</NavItem>
+      <NavItem onClick={push({
+        route: routes.pageInTransition
+      })}>Page In Transitions</NavItem>
+    </NavGroup>
     <TextBlock>
       <Text flush>Animatron exposes a number of built-in page transitions.</Text>
     </TextBlock>
@@ -48,15 +61,6 @@ export const TRANSITIONS = {
   MODAL: 'modal'
 }
     `}</CodeBlock>
-    <NavGroup>
-      <NavItem onClick={push({
-        route: routes.fadeTransition,
-        transition: TRANSITIONS.FADE
-      })}>Fade</NavItem>
-      <NavItem onClick={push({
-        route: routes.pageInTransition
-      })}>Page In Transitions</NavItem>
-    </NavGroup>
   </PageView>
 )
 
@@ -83,6 +87,20 @@ export const PageInTransition = () => (
     <TextBlock>
       <Text>This transition has transitioned in from the right-hand side, it has still been added to the navigation stack.</Text>
       <Text flush>Hit back to see the <code>Page Out</code> transition.</Text>
+    </TextBlock>
+  </PageView>
+)
+
+export const InstantTransition = () => (
+  <PageView>
+    <Title>Instant</Title>
+    <NavGroup>
+      <NavBack onClick={pop({
+        transition: TRANSITIONS.INSTANT
+      })}>Back</NavBack>
+    </NavGroup>
+    <TextBlock>
+      <Text flush>This page transition has no transition! It has still been added to the navigation stack.</Text>
     </TextBlock>
   </PageView>
 )

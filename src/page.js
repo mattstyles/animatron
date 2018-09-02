@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import {TransitionGroup, Transition} from 'react-transition-group'
 
 import {
+  instantTransition,
   fadeTransition,
   pageInTransition,
   pageOutTransition
@@ -14,6 +15,7 @@ import {
 } from './defaults'
 
 export const TRANSITIONS = {
+  INSTANT: 'instant',
   FADE: 'fade',
   PAGE_IN: 'pageIn',
   PAGE_OUT: 'pageOut',
@@ -21,6 +23,7 @@ export const TRANSITIONS = {
 }
 
 const router = {
+  [TRANSITIONS.INSTANT]: instantTransition,
   [TRANSITIONS.FADE]: fadeTransition,
   [TRANSITIONS.PAGE_IN]: pageInTransition,
   [TRANSITIONS.PAGE_OUT]: pageOutTransition
@@ -71,3 +74,4 @@ export const PageTransition = ({
 PageTransition.defaultProps = {
   timeout: pageDefaultTiming
 }
+// @TODO prop types

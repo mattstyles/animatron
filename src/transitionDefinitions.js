@@ -8,6 +8,21 @@ import {
   pageDefaultEnterStyle
 } from './defaults'
 
+const noop = node => {
+  return node.styles
+}
+
+export const instantTransition = () => ({
+  onEnter: setStyles(pageDefaultEnterStyle),
+  onEntering: noop,
+  onExit: noop,
+  onExiting: noop,
+  timeout: {
+    enter: 0,
+    exit: 0
+  }
+})
+
 export const fadeTransition = ({timeout}) => ({
   onEnter: setStyles(pageDefaultEnterStyle, {
     transition: `opacity ${timeout.enter}ms ease-out`,
