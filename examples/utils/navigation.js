@@ -21,6 +21,7 @@ export const routes = {
   fadeTransition: '/pageTransitions/fade',
   pageInTransition: '/pageTransitions/pageIn',
   instantTransition: '/pageTransitions/instant',
+  modalTransition: '/pageTransitions/modal',
   usingPageTransitions: '/usingPageTransitions',
   usingWithNavigator: '/usingWithNavigator'
 }

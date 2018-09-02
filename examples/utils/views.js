@@ -48,7 +48,11 @@ export const PageTransitionsView = () => (
       })}>Fade</NavItem>
       <NavItem onClick={push({
         route: routes.pageInTransition
-      })}>Page In Transitions</NavItem>
+      })}>Page In</NavItem>
+      <NavItem onClick={push({
+        route: routes.modalTransition,
+        transition: TRANSITIONS.MODAL_IN
+      })}>Modal</NavItem>
     </NavGroup>
     <TextBlock>
       <Text flush>Animatron exposes a number of built-in page transitions.</Text>
@@ -101,6 +105,21 @@ export const InstantTransition = () => (
     </NavGroup>
     <TextBlock>
       <Text flush>This page transition has no transition! It has still been added to the navigation stack.</Text>
+    </TextBlock>
+  </PageView>
+)
+
+export const ModalTransition = () => (
+  <PageView>
+    <Title>Modal</Title>
+    <NavGroup>
+      <NavBack onClick={pop({
+        transition: TRANSITIONS.MODAL_OUT
+      })}>Back</NavBack>
+    </NavGroup>
+    <TextBlock>
+      <Text>The modal-style transition of a page entering from the bottom of the viewport can be achieved with the <code>modal</code> transition.</Text>
+      <Text flush>It is not a true modal as it is a real page with a navigation stack entry rather than an overlay.</Text>
     </TextBlock>
   </PageView>
 )

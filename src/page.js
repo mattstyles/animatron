@@ -7,7 +7,9 @@ import {
   instantTransition,
   fadeTransition,
   pageInTransition,
-  pageOutTransition
+  pageOutTransition,
+  modalInTransition,
+  modalOutTransition
 } from './transitionDefinitions'
 
 import {
@@ -19,14 +21,17 @@ export const TRANSITIONS = {
   FADE: 'fade',
   PAGE_IN: 'pageIn',
   PAGE_OUT: 'pageOut',
-  MODAL: 'modal'
+  MODAL_IN: 'modalIn',
+  MODAL_OUT: 'modalOut'
 }
 
 const router = {
   [TRANSITIONS.INSTANT]: instantTransition,
   [TRANSITIONS.FADE]: fadeTransition,
   [TRANSITIONS.PAGE_IN]: pageInTransition,
-  [TRANSITIONS.PAGE_OUT]: pageOutTransition
+  [TRANSITIONS.PAGE_OUT]: pageOutTransition,
+  [TRANSITIONS.MODAL_IN]: modalInTransition,
+  [TRANSITIONS.MODAL_OUT]: modalOutTransition
 }
 
 const getTransition = ({transition, timeout}) => {

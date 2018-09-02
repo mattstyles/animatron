@@ -74,3 +74,32 @@ export const pageOutTransition = ({timeout}) => ({
     transform: `translateX(100%)`
   })
 })
+
+export const modalInTransition = ({timeout}) => ({
+  onEnter: setStyles(pageDefaultEnterStyle, {
+    transition: `transform ${timeout.enter}ms ease-out`,
+    zIndex: 10,
+    transform: `translateY(100%)`
+  }),
+  onEntering: setDelayedStyles(10, {
+    transform: `translateY(0%)`
+  }),
+  onExit: noop,
+  onExiting: setStyles({
+    zIndex: 5
+  })
+})
+
+export const modalOutTransition = ({timeout}) => ({
+  onEnter: setStyles(pageDefaultEnterStyle, {
+    zIndex: 5
+  }),
+  onEntering: noop,
+  onExit: setStyles({
+    transition: `transform ${timeout.enter}ms ease-out`
+  }),
+  onExiting: setStyles({
+    zIndex: 10,
+    transform: `translateY(100%)`
+  })
+})

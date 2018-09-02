@@ -12,6 +12,7 @@ import {
   FadeTransition,
   PageInTransition,
   InstantTransition,
+  ModalTransition,
   UsingPageTransitions,
   UsingWithNavigator
 } from './utils/views'
@@ -56,6 +57,7 @@ signal.observe(state => {
         <FadeTransition route={routes.fadeTransition} />
         <PageInTransition route={routes.pageInTransition} />
         <InstantTransition route={routes.instantTransition} />
+        <ModalTransition route={routes.modalTransition} />
         <UsingPageTransitions route={routes.usingPageTransitions} />
         <UsingWithNavigator route={routes.usingWithNavigator} />
       </Navigator>
