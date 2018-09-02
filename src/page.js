@@ -1,5 +1,6 @@
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {TransitionGroup, Transition} from 'react-transition-group'
 
@@ -79,4 +80,13 @@ export const PageTransition = ({
 PageTransition.defaultProps = {
   timeout: pageDefaultTiming
 }
-// @TODO prop types
+PageTransition.propTypes = {
+  timeout: PropTypes.oneOfType([
+    PropTypes.shape({
+      enter: PropTypes.number,
+      exit: PropTypes.number
+    }),
+    PropTypes.number
+  ]),
+  transition: PropTypes.oneOf(Object.values(TRANSITIONS))
+}
