@@ -1,6 +1,7 @@
 
-#
+# 0.1.0
 
+* _add_ modal page transition
 * _add_ instant page transition
 
 # 0.0.1

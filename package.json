@@ -1,6 +1,6 @@
 {
   "name": "animatron",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Various animation helpers for React-based projects",
   "main": "lib/index.js",
   "scripts": {
@@ -71,6 +71,7 @@
     "history": "^4.7.2",
     "open-color": "^1.6.3",
     "parcel-bundler": "^1.9.7",
+    "parcel-plugin-bundle-visualiser": "^1.2.0",
     "raid": "^2.13.0",
     "raid-addons": "^2.13.0",
     "raid-navigator": "^2.13.0",
