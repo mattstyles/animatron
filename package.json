@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib && rimraf dist",
-    "predeploy": "npm run clean && NODE_ENV=production parcel build examples/index.html",
+    "predeploy": "npm run clean && NODE_ENV=production parcel build examples/index.html --public-url /animatron/",
     "deploy": "gh-pages -d dist",
     "lint": "standard",
     "prebuild": "npm run clean",
