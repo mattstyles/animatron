@@ -5,7 +5,7 @@ import oc from 'open-color'
 import {pop} from './navigation'
 import {View, TextBlock, Text, Title, NavGroup, NavBack, Toggle} from './components'
 
-import {Fade} from '../../src'
+import {Fade, AnimateGroup} from '../../src'
 
 const PageView = styled(View)`
   background: ${oc.gray[1]};
@@ -35,6 +35,17 @@ export const AnimationView = () => (
           </Fade>
         )}
       </Toggle>
+    </TextBlock>
+    <TextBlock>
+      <Text>Use <code>AnimateGroup</code> for replacement style transitions. Each different child requires a unique <code>key</code>.</Text>
+      <AnimateGroup>
+        <Toggle text='Toggle'>
+          {flag => flag
+            ? <Fade in key='two'><Text flush>Component Two</Text></Fade>
+            : <Fade in key='one'><Text flush>Component One</Text></Fade>
+          }
+        </Toggle>
+      </AnimateGroup>
     </TextBlock>
   </PageView>
 )
