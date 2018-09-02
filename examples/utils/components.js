@@ -168,10 +168,10 @@ export class Toggle extends Component {
 
   render () {
     const {isShowing} = this.state
-    const {children} = this.props
+    const {children, text} = this.props
     return (
       <Fragment>
-        <Button onClick={this.onToggle}>Toggle</Button>
+        <Button onClick={this.onToggle}>{text}</Button>
         {children(isShowing)}
       </Fragment>
     )

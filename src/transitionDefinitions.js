@@ -25,9 +25,9 @@ export const instantTransition = () => ({
 
 export const fadeTransition = ({
   timeout,
-  defaultStyles = pageDefaultEnterStyle
+  defaultStyle = {}
 }) => ({
-  onEnter: setStyles(defaultStyles, {
+  onEnter: setStyles(defaultStyle, {
     transition: `opacity ${timeout.enter}ms ease-out`,
     opacity: 0
   }),
@@ -42,8 +42,11 @@ export const fadeTransition = ({
   })
 })
 
-export const pageInTransition = ({timeout}) => ({
-  onEnter: setStyles(pageDefaultEnterStyle, {
+export const pageInTransition = ({
+  timeout,
+  defaultStyle = {}
+}) => ({
+  onEnter: setStyles(defaultStyle, {
     transition: `transform ${timeout.enter}ms ease-out`,
     zIndex: 10,
     transform: `translateX(100%)`
@@ -60,8 +63,11 @@ export const pageInTransition = ({timeout}) => ({
   })
 })
 
-export const pageOutTransition = ({timeout}) => ({
-  onEnter: setStyles(pageDefaultEnterStyle, {
+export const pageOutTransition = ({
+  timeout,
+  defaultStyle = {}
+}) => ({
+  onEnter: setStyles(defaultStyle, {
     transition: `transform ${timeout.enter}ms ease-out`,
     zIndex: 5,
     transform: `translateX(-25%)`
@@ -78,8 +84,11 @@ export const pageOutTransition = ({timeout}) => ({
   })
 })
 
-export const modalInTransition = ({timeout}) => ({
-  onEnter: setStyles(pageDefaultEnterStyle, {
+export const modalInTransition = ({
+  timeout,
+  defaultStyle = {}
+}) => ({
+  onEnter: setStyles(defaultStyle, {
     transition: `transform ${timeout.enter}ms ease-out`,
     zIndex: 10,
     transform: `translateY(100%)`
@@ -93,8 +102,11 @@ export const modalInTransition = ({timeout}) => ({
   })
 })
 
-export const modalOutTransition = ({timeout}) => ({
-  onEnter: setStyles(pageDefaultEnterStyle, {
+export const modalOutTransition = ({
+  timeout,
+  defaultStyle = {}
+}) => ({
+  onEnter: setStyles(defaultStyle, {
     zIndex: 5
   }),
   onEntering: noop,

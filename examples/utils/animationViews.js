@@ -28,7 +28,7 @@ export const AnimationView = () => (
       </Fade>
     </TextBlock>
     <TextBlock>
-      <Toggle>
+      <Toggle text='Fade'>
         {flag => (
           <Fade in={flag}>
             <Text flush>By default animation components mount and unmount at each edge of the transition.</Text>

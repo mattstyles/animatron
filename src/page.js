@@ -14,7 +14,8 @@ import {
 } from './transitionDefinitions'
 
 import {
-  pageDefaultTiming
+  pageDefaultTiming,
+  pageDefaultEnterStyle
 } from './defaults'
 
 export const TRANSITIONS = {
@@ -37,10 +38,14 @@ const router = {
 
 const getTransition = ({transition, timeout}) => {
   if (!transition || !router[transition]) {
-    return instantTransition({timeout})
+    return instantTransition({timeout,
+      defaultStyle: pageDefaultEnterStyle
+    })
   }
 
-  return router[transition]({timeout})
+  return router[transition]({timeout,
+    defaultStyle: pageDefaultEnterStyle
+  })
 }
 
 export const PageGroup = styled(TransitionGroup)`

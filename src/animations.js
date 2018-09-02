@@ -12,7 +12,7 @@ export const Fade = ({
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={fadeTransition({timeout, defaultStyles: {}})}
+    transitionStyles={fadeTransition({timeout})}
     {...props}
   >
     {children}

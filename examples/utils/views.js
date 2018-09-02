@@ -160,7 +160,7 @@ export const UsingPageTransitions = () => (
 
 export const UsingWithNavigator = () => (
   <PageView>
-    <Title>Using Page Transitions</Title>
+    <Title>Using With Navigator</Title>
     <NavGroup>
       <NavBack onClick={pop({})}>Back</NavBack>
     </NavGroup>
