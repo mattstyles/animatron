@@ -5,7 +5,9 @@ import {
 } from './helpers'
 
 import {
-  pageDefaultEnterStyle
+  pageDefaultTiming,
+  pageDefaultEnterStyle,
+  defaultSlideDistance
 } from './defaults'
 
 const noop = node => {
@@ -117,4 +119,26 @@ export const modalOutTransition = ({
     zIndex: 10,
     transform: `translateY(100%)`
   })
+})
+
+export const appearUpTransition = ({
+  timeout = pageDefaultTiming,
+  defaultStyle = {},
+  distance = defaultSlideDistance
+}) => ({
+  onEnter: setStyles(defaultStyle, {
+    opacity: 0,
+    transform: `translateY(${distance})`,
+    transition: `opacity ${timeout.enter}ms ease-out, transform ${timeout.enter}ms cubic-bezier(.28,.8,.71,1.49)`
+  }),
+  onEntering: setDelayedStyles(10, {
+    opacity: 1,
+    transform: `translateY(0)`
+  }),
+  onExit: setStyles({
+    opacity: 0,
+    transition: `opacity ${timeout.exit}ms ease-out, transform ${timeout.exit}ms cubic-bezier(.28,.8,.71,1.49)`,
+    transform: `translateY(${distance})`
+  }),
+  onExiting: noop
 })

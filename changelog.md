@@ -1,4 +1,9 @@
 
+#
+
+* _add_ add appear up component
+* _add_ fade animation component
+
 # 0.1.0
 
 * _add_ modal page transition

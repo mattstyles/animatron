@@ -16,5 +16,6 @@ export {
 } from './animate'
 
 export {
-  Fade
+  Fade,
+  AppearUp
 } from './animations'

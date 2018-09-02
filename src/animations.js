@@ -1,7 +1,14 @@
 
 import {Animate} from './animate'
-import {fadeTransition} from './transitionDefinitions'
-import {pageDefaultTiming} from './defaults'
+import {
+  pageDefaultTiming,
+  defaultSlideDistance
+} from './defaults'
+
+import {
+  fadeTransition,
+  appearUpTransition
+} from './transitionDefinitions'
 
 export const Fade = ({
   in: inProp,
@@ -22,4 +29,27 @@ export const Fade = ({
 Fade.defaultProps = {
   timeout: pageDefaultTiming,
   defaultStyle: {}
+}
+
+export const AppearUp = ({
+  in: inProp,
+  timeout,
+  defaultStyle,
+  distance,
+  children,
+  ...props
+}) => (
+  <Animate
+    in={inProp}
+    timeout={timeout}
+    transitionStyles={appearUpTransition({timeout, defaultStyle, distance})}
+    {...props}
+  >
+    {children}
+  </Animate>
+)
+AppearUp.defaultProps = {
+  timeout: pageDefaultTiming,
+  defaultStyle: {},
+  distance: defaultSlideDistance
 }
