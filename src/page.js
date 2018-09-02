@@ -36,7 +36,7 @@ const router = {
 
 const getTransition = ({transition, timeout}) => {
   if (!transition || !router[transition]) {
-    return fadeTransition({timeout})
+    return instantTransition({timeout})
   }
 
   return router[transition]({timeout})
