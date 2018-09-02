@@ -23,8 +23,11 @@ export const instantTransition = () => ({
   }
 })
 
-export const fadeTransition = ({timeout}) => ({
-  onEnter: setStyles(pageDefaultEnterStyle, {
+export const fadeTransition = ({
+  timeout,
+  defaultStyles = pageDefaultEnterStyle
+}) => ({
+  onEnter: setStyles(defaultStyles, {
     transition: `opacity ${timeout.enter}ms ease-out`,
     opacity: 0
   }),

@@ -23,7 +23,8 @@ export const routes = {
   instantTransition: '/pageTransitions/instant',
   modalTransition: '/pageTransitions/modal',
   usingPageTransitions: '/usingPageTransitions',
-  usingWithNavigator: '/usingWithNavigator'
+  usingWithNavigator: '/usingWithNavigator',
+  animations: '/animations'
 }
 
 export const push = ({

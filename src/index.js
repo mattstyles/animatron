@@ -9,3 +9,12 @@ export {
   mapChildren,
   childFactory
 } from './navigator'
+
+export {
+  Animate,
+  AnimateGroup
+} from './animate'
+
+export {
+  Fade
+} from './animations'

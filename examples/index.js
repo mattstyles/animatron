@@ -18,6 +18,10 @@ import {
 } from './utils/views'
 
 import {
+  AnimationView
+} from './utils/animationViews'
+
+import {
   PageGroup,
   mapChildren,
   childFactory
@@ -60,6 +64,7 @@ signal.observe(state => {
         <ModalTransition route={routes.modalTransition} />
         <UsingPageTransitions route={routes.usingPageTransitions} />
         <UsingWithNavigator route={routes.usingWithNavigator} />
+        <AnimationView route={routes.animations} />
       </Navigator>
     </App>,
     el

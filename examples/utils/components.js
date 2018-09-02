@@ -1,4 +1,5 @@
 
+import React, {Component, Fragment} from 'react'
 import styled, {injectGlobal} from 'styled-components'
 import oc from 'open-color'
 
@@ -152,3 +153,27 @@ export const NavBack = styled(NavItem)`
     margin-right: 1.6rem;
   }
 `
+
+export class Toggle extends Component {
+  state = {
+    isShowing: false
+  }
+
+  onToggle = () => {
+    this.setState(s => ({
+      ...s,
+      isShowing: !s.isShowing
+    }))
+  }
+
+  render () {
+    const {isShowing} = this.state
+    const {children} = this.props
+    return (
+      <Fragment>
+        <Button onClick={this.onToggle}>Toggle</Button>
+        {children(isShowing)}
+      </Fragment>
+    )
+  }
+}

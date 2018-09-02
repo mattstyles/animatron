@@ -27,6 +27,9 @@ export const HomeView = () => (
       <NavItem onClick={push({
         route: routes.usingWithNavigator
       })}>Using With Navigator</NavItem>
+      <NavItem onClick={push({
+        route: routes.animations
+      })}>Animations</NavItem>
     </NavGroup>
   </PageView>
 )
