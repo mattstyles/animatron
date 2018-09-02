@@ -5,6 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
+    "predeploy": "NODE_ENV=production parcel build examples/index.html",
+    "deploy": "gh-pages -d dist",
     "lint": "standard",
     "prebuild": "npm run clean",
     "build": "babel src --out-dir lib",
@@ -65,6 +67,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "babel-preset-urban": "^1.0.1",
+    "gh-pages": "^1.2.0",
     "history": "^4.7.2",
     "open-color": "^1.6.3",
     "parcel-bundler": "^1.9.7",
