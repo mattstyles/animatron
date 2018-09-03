@@ -24,7 +24,9 @@ export const routes = {
   modalTransition: '/pageTransitions/modal',
   usingPageTransitions: '/usingPageTransitions',
   usingWithNavigator: '/usingWithNavigator',
-  animations: '/animations'
+  animations: '/animations',
+  fadeAnimation: '/animations/fade',
+  appearAnimation: '/animations/appear'
 }
 
 export const push = ({

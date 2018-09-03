@@ -7,7 +7,8 @@ import {
 import {
   pageDefaultTiming,
   pageDefaultEnterStyle,
-  defaultSlideDistance
+  defaultSlideDistance,
+  defaultScaleDistance
 } from './defaults'
 
 const noop = node => {
@@ -43,6 +44,10 @@ export const fadeTransition = ({
     opacity: 0
   })
 })
+
+/**
+ * Page Transitions
+ */
 
 export const pageInTransition = ({
   timeout,
@@ -121,6 +126,10 @@ export const modalOutTransition = ({
   })
 })
 
+/**
+ * Animation Transitions
+ */
+
 export const appearUpTransition = ({
   timeout = pageDefaultTiming,
   defaultStyle = {},
@@ -139,6 +148,118 @@ export const appearUpTransition = ({
     opacity: 0,
     transition: `opacity ${timeout.exit}ms ease-out, transform ${timeout.exit}ms cubic-bezier(.28,.8,.71,1.49)`,
     transform: `translateY(${distance})`
+  }),
+  onExiting: noop
+})
+
+export const appearDownTransition = ({
+  timeout = pageDefaultTiming,
+  defaultStyle = {},
+  distance = defaultSlideDistance
+}) => ({
+  onEnter: setStyles(defaultStyle, {
+    opacity: 0,
+    transform: `translateY(-${distance})`,
+    transition: `opacity ${timeout.enter}ms ease-out, transform ${timeout.enter}ms cubic-bezier(.28,.8,.71,1.49)`
+  }),
+  onEntering: setDelayedStyles(10, {
+    opacity: 1,
+    transform: `translateY(0)`
+  }),
+  onExit: setStyles({
+    opacity: 0,
+    transition: `opacity ${timeout.exit}ms ease-out, transform ${timeout.exit}ms cubic-bezier(.28,.8,.71,1.49)`,
+    transform: `translateY(-${distance})`
+  }),
+  onExiting: noop
+})
+
+export const appearLeftTransition = ({
+  timeout = pageDefaultTiming,
+  defaultStyle = {},
+  distance = defaultSlideDistance
+}) => ({
+  onEnter: setStyles(defaultStyle, {
+    opacity: 0,
+    transform: `translateX(-${distance})`,
+    transition: `opacity ${timeout.enter}ms ease-out, transform ${timeout.enter}ms cubic-bezier(.28,.8,.71,1.49)`
+  }),
+  onEntering: setDelayedStyles(10, {
+    opacity: 1,
+    transform: `translateX(0)`
+  }),
+  onExit: setStyles({
+    opacity: 0,
+    transition: `opacity ${timeout.exit}ms ease-out, transform ${timeout.exit}ms cubic-bezier(.28,.8,.71,1.49)`,
+    transform: `translateX(-${distance})`
+  }),
+  onExiting: noop
+})
+
+export const appearRightTransition = ({
+  timeout = pageDefaultTiming,
+  defaultStyle = {},
+  distance = defaultSlideDistance
+}) => ({
+  onEnter: setStyles(defaultStyle, {
+    opacity: 0,
+    transform: `translateX(${distance})`,
+    transition: `opacity ${timeout.enter}ms ease-out, transform ${timeout.enter}ms cubic-bezier(.28,.8,.71,1.49)`
+  }),
+  onEntering: setDelayedStyles(10, {
+    opacity: 1,
+    transform: `translateX(0)`
+  }),
+  onExit: setStyles({
+    opacity: 0,
+    transition: `opacity ${timeout.exit}ms ease-out, transform ${timeout.exit}ms cubic-bezier(.28,.8,.71,1.49)`,
+    transform: `translateX(${distance})`
+  }),
+  onExiting: noop
+})
+
+export const appearInTransition = ({
+  timeout = pageDefaultTiming,
+  defaultStyle = {},
+  scale = defaultScaleDistance
+}) => ({
+  onEnter: setStyles(defaultStyle, {
+    opacity: 0,
+    transform: `scale(${1 - scale})`,
+    transition: `opacity ${timeout.enter}ms ease-out, transform ${timeout.enter}ms cubic-bezier(.28,.8,.71,1.49)`,
+    transformOrigin: 'center'
+  }),
+  onEntering: setDelayedStyles(10, {
+    opacity: 1,
+    transform: `scale(1)`
+  }),
+  onExit: setStyles({
+    opacity: 0,
+    transition: `opacity ${timeout.exit}ms ease-out, transform ${timeout.exit}ms cubic-bezier(.28,.8,.71,1.49)`,
+    transform: `scale(${1 - scale})`
+  }),
+  onExiting: noop
+})
+
+export const appearOutTransition = ({
+  timeout = pageDefaultTiming,
+  defaultStyle = {},
+  scale = defaultScaleDistance
+}) => ({
+  onEnter: setStyles(defaultStyle, {
+    opacity: 0,
+    transform: `scale(${1 + scale})`,
+    transition: `opacity ${timeout.enter}ms ease-out, transform ${timeout.enter}ms cubic-bezier(.28,.8,.71,1.49)`,
+    transformOrigin: 'center'
+  }),
+  onEntering: setDelayedStyles(10, {
+    opacity: 1,
+    transform: `scale(1)`
+  }),
+  onExit: setStyles({
+    opacity: 0,
+    transition: `opacity ${timeout.exit}ms ease-out, transform ${timeout.exit}ms cubic-bezier(.28,.8,.71,1.49)`,
+    transform: `scale(${1 + scale})`
   }),
   onExiting: noop
 })

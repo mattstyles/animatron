@@ -22,5 +22,10 @@ export {
 
 export {
   Fade,
-  AppearUp
+  AppearUp,
+  AppearDown,
+  AppearLeft,
+  AppearRight,
+  AppearIn,
+  AppearOut
 } from './animations'

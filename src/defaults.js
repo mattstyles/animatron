@@ -12,4 +12,5 @@ export const pageDefaultTiming = {
   exit: 300
 }
 
-export const defaultSlideDistance = '20px'
+export const defaultSlideDistance = '16px'
+export const defaultScaleDistance = 0.2

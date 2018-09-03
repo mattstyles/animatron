@@ -2,13 +2,18 @@
 import styled from 'styled-components'
 import oc from 'open-color'
 
-import {pop} from './navigation'
-import {View, TextBlock, Text, Title, NavGroup, NavBack, Toggle} from './components'
+import {routes, push, pop} from './navigation'
+import {View, TextBlock, Text, InlineText, Title, NavGroup, NavBack, NavItem, Toggle} from './components'
 
 import {
   AnimateGroup,
   Fade,
-  AppearUp
+  AppearUp,
+  AppearDown,
+  AppearLeft,
+  AppearRight,
+  AppearIn,
+  AppearOut
 } from '../../src'
 
 const PageView = styled(View)`
@@ -23,9 +28,78 @@ const AppearUpReplace = styled(AppearUp)`
   left: 0;
 `
 
+const AnimationType = ({Type, text}) => (
+  <TextBlock>
+    <Toggle text={text}>
+      {flag => (
+        <Type in={flag}>
+          <InlineText flush>{text}</InlineText>
+        </Type>
+      )}
+    </Toggle>
+  </TextBlock>
+)
+
 export const AnimationView = () => (
   <PageView>
     <Title>Animations</Title>
+    <NavGroup>
+      <NavBack onClick={pop({})}>Back</NavBack>
+    </NavGroup>
+    <NavGroup>
+      <NavItem onClick={push({
+        route: routes.fadeAnimation
+      })}>Fade</NavItem>
+      <NavItem onClick={push({
+        route: routes.appearAnimation
+      })}>Appear</NavItem>
+    </NavGroup>
+    <TextBlock>
+      <Toggle text='Mounting/Unmounting'>
+        {flag => (
+          <Fade in={flag}>
+            <Text flush>By default animation components mount and unmount at each edge of the transition.</Text>
+          </Fade>
+        )}
+      </Toggle>
+    </TextBlock>
+    <TextBlock>
+      <Text>Use <code>AnimateGroup</code> for replacement style transitions. Each different child requires a unique <code>key</code>.</Text>
+      <Text><code>AnimateGroup</code> needs children to operate on, using <code>Toggle</code> like this doesn’t allow it to access the children so this example actually instantly unmounts exiting children so they don’t animate.</Text>
+      <AnimateGroup>
+        <Toggle text='Toggle'>
+          {flag => flag
+            ? <Fade in key='two'><Text flush>Component Two</Text></Fade>
+            : <Fade in key='one'><Text flush>Component One</Text></Fade>
+          }
+        </Toggle>
+      </AnimateGroup>
+    </TextBlock>
+    <TextBlock>
+      <Text>This example lets <code>AnimateGroup</code> operate on the changing children but does require a bit more work as the container must handle the sizing.</Text>
+      <Toggle
+        text='Toggle'
+        as={AnimateGroup}
+        passProps={{
+          styles: {
+            height: 24,
+            marginTop: 8,
+            boxSizing: 'border-box'
+          }
+        }}
+      >
+        {flag => flag
+          ? <AppearUpReplace in key='two' distance={'8px'}><Text flush>Component Two</Text></AppearUpReplace>
+          : <AppearUpReplace in key='one' distance={'8px'}><Text flush>Component One</Text></AppearUpReplace>
+        }
+      </Toggle>
+    </TextBlock>
+  </PageView>
+)
+
+export const FadeAnimation = () => (
+  <PageView>
+    <Title>Animations—Fade</Title>
     <NavGroup>
       <NavBack onClick={pop({})}>Back</NavBack>
     </NavGroup>
@@ -77,5 +151,20 @@ export const AnimationView = () => (
         }
       </Toggle>
     </TextBlock>
+  </PageView>
+)
+
+export const AppearAnimation = () => (
+  <PageView>
+    <Title>Animations—Appear</Title>
+    <NavGroup>
+      <NavBack onClick={pop({})}>Back</NavBack>
+    </NavGroup>
+    <AnimationType Type={AppearUp} text='Appear Up' />
+    <AnimationType Type={AppearDown} text='Appear Down' />
+    <AnimationType Type={AppearLeft} text='Appear Left' />
+    <AnimationType Type={AppearRight} text='Appear Right' />
+    <AnimationType Type={AppearIn} text='Appear In' />
+    <AnimationType Type={AppearOut} text='Appear Out' />
   </PageView>
 )

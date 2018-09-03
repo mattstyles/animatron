@@ -18,7 +18,9 @@ import {
 } from './utils/views'
 
 import {
-  AnimationView
+  AnimationView,
+  FadeAnimation,
+  AppearAnimation
 } from './utils/animationViews'
 
 import {
@@ -65,6 +67,8 @@ signal.observe(state => {
         <UsingPageTransitions route={routes.usingPageTransitions} />
         <UsingWithNavigator route={routes.usingWithNavigator} />
         <AnimationView route={routes.animations} />
+        <FadeAnimation route={routes.fadeAnimation} />
+        <AppearAnimation route={routes.appearAnimation} />
       </Navigator>
     </App>,
     el

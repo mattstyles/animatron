@@ -67,6 +67,12 @@ export const Text = styled.p`
   margin-bottom: ${props => props.flush && '0'};
 `
 
+export const InlineText = styled.span`
+  font-size: 1.8rem;
+  line-height: 1.4;
+  display: inline-block;
+`
+
 export const TextBlock = styled.div`
   background: ${oc.white};
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
