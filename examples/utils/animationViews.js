@@ -53,6 +53,9 @@ export const AnimationView = () => (
       <NavItem onClick={push({
         route: routes.appearAnimation
       })}>Appear</NavItem>
+      <NavItem onClick={push({
+        route: routes.cascadeAnimation
+      })}>Delayed Transitions</NavItem>
     </NavGroup>
     <TextBlock>
       <Toggle text='Mounting/Unmounting'>
@@ -104,10 +107,16 @@ export const FadeAnimation = () => (
       <NavBack onClick={pop({})}>Back</NavBack>
     </NavGroup>
     <TextBlock>
-      <Fade in appear timeout={{
-        enter: 2000,
-        exit: 300
-      }}>
+      <Fade in appear
+        delay={{
+          enter: 200,
+          exit: 100
+        }}
+        timeout={{
+          enter: 1000,
+          exit: 300
+        }}
+      >
         <Text flush>This text will fade in. This component will transition in when the component appears, i.e. when it is mounted. A long transition enter timeout is applied only because this page has its own transition on the entry edge.</Text>
       </Fade>
     </TextBlock>
@@ -166,5 +175,28 @@ export const AppearAnimation = () => (
     <AnimationType Type={AppearRight} text='Appear Right' />
     <AnimationType Type={AppearIn} text='Appear In' />
     <AnimationType Type={AppearOut} text='Appear Out' />
+  </PageView>
+)
+
+export const CascadeAnimation = () => (
+  <PageView>
+    <Title>Delay Property</Title>
+    <NavGroup>
+      <NavBack onClick={pop({})}>Back</NavBack>
+    </NavGroup>
+    <TextBlock>
+      <AppearRight in appear delay={{
+        enter: 300,
+        exit: 0
+      }}><Text>The <code>appear</code> boolean property defines if this component should appear when mounted.</Text></AppearRight>
+      <AppearRight in appear delay={{
+        enter: 500,
+        exit: 0
+      }}><Text>The <code>delay</code> object property can be applied to stagger entry of subsequent elements.</Text></AppearRight>
+      <AppearRight in appear delay={{
+        enter: 700,
+        exit: 0
+      }}><Text><code>delay</code> accepts an object defining the entry and exit delay i.e. <code>{`{enter: 200, exit: 100}`}</code></Text></AppearRight>
+    </TextBlock>
   </PageView>
 )

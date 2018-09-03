@@ -14,3 +14,7 @@ export const pageDefaultTiming = {
 
 export const defaultSlideDistance = '16px'
 export const defaultScaleDistance = 0.2
+export const defaultTransitionDelay = {
+  enter: 0,
+  exit: 0
+}

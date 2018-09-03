@@ -20,7 +20,8 @@ import {
 import {
   AnimationView,
   FadeAnimation,
-  AppearAnimation
+  AppearAnimation,
+  CascadeAnimation
 } from './utils/animationViews'
 
 import {
@@ -69,6 +70,7 @@ signal.observe(state => {
         <AnimationView route={routes.animations} />
         <FadeAnimation route={routes.fadeAnimation} />
         <AppearAnimation route={routes.appearAnimation} />
+        <CascadeAnimation route={routes.cascadeAnimation} />
       </Navigator>
     </App>,
     el

@@ -26,7 +26,8 @@ export const routes = {
   usingWithNavigator: '/usingWithNavigator',
   animations: '/animations',
   fadeAnimation: '/animations/fade',
-  appearAnimation: '/animations/appear'
+  appearAnimation: '/animations/appear',
+  cascadeAnimation: '/animations/cascade'
 }
 
 export const push = ({

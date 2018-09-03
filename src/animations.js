@@ -19,13 +19,14 @@ export const Fade = ({
   in: inProp,
   timeout,
   defaultStyle,
+  delay,
   children,
   ...props
 }) => (
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={fadeTransition({timeout, defaultStyle})}
+    transitionStyles={fadeTransition({timeout, defaultStyle, delay})}
     {...props}
   >
     {children}
@@ -41,13 +42,14 @@ export const AppearUp = ({
   timeout,
   defaultStyle,
   distance,
+  delay,
   children,
   ...props
 }) => (
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearUpTransition({timeout, defaultStyle, distance})}
+    transitionStyles={appearUpTransition({timeout, defaultStyle, distance, delay})}
     {...props}
   >
     {children}
@@ -64,13 +66,14 @@ export const AppearDown = ({
   timeout,
   defaultStyle,
   distance,
+  delay,
   children,
   ...props
 }) => (
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearDownTransition({timeout, defaultStyle, distance})}
+    transitionStyles={appearDownTransition({timeout, defaultStyle, distance, delay})}
     {...props}
   >
     {children}
@@ -87,13 +90,14 @@ export const AppearLeft = ({
   timeout,
   defaultStyle,
   distance,
+  delay,
   children,
   ...props
 }) => (
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearLeftTransition({timeout, defaultStyle, distance})}
+    transitionStyles={appearLeftTransition({timeout, defaultStyle, distance, delay})}
     {...props}
   >
     {children}
@@ -110,13 +114,14 @@ export const AppearRight = ({
   timeout,
   defaultStyle,
   distance,
+  delay,
   children,
   ...props
 }) => (
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearRightTransition({timeout, defaultStyle, distance})}
+    transitionStyles={appearRightTransition({timeout, defaultStyle, distance, delay})}
     {...props}
   >
     {children}
@@ -133,13 +138,14 @@ export const AppearIn = ({
   timeout,
   defaultStyle,
   distance,
+  delay,
   children,
   ...props
 }) => (
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearInTransition({timeout, defaultStyle, distance})}
+    transitionStyles={appearInTransition({timeout, defaultStyle, distance, delay})}
     {...props}
   >
     {children}
@@ -156,13 +162,14 @@ export const AppearOut = ({
   timeout,
   defaultStyle,
   distance,
+  delay,
   children,
   ...props
 }) => (
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearOutTransition({timeout, defaultStyle, distance})}
+    transitionStyles={appearOutTransition({timeout, defaultStyle, distance, delay})}
     {...props}
   >
     {children}
