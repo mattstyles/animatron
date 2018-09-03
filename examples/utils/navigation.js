@@ -27,7 +27,10 @@ export const routes = {
   animations: '/animations',
   fadeAnimation: '/animations/fade',
   appearAnimation: '/animations/appear',
-  cascadeAnimation: '/animations/cascade'
+  commonCases: '/common',
+  cascadeAnimation: '/common/cascade',
+  tooltip: '/common/tooltip',
+  replace: '/common/replace'
 }
 
 export const push = ({

@@ -1,18 +1,9 @@
 
-import styled from 'styled-components'
-import oc from 'open-color'
-
-import { routes, push, pop } from './navigation'
-import { View, TextBlock, Text, CodeBlock, Title, NavGroup, NavItem, NavBack } from './components'
-import { SimplePageTransitionExample } from './simpleRoutingExample'
+import { routes, push, pop } from '../utils/navigation'
+import { PageView, View, TextBlock, Text, CodeBlock, Title, NavGroup, NavItem, NavBack } from '../utils/components'
+import { SimplePageTransitionExample } from '../utils/simpleRoutingExample'
 
 import { TRANSITIONS } from '../../src'
-
-const PageView = styled(View)`
-  background: ${oc.gray[1]};
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-`
 
 export const HomeView = () => (
   <PageView>
@@ -30,6 +21,9 @@ export const HomeView = () => (
       <NavItem onClick={push({
         route: routes.animations
       })}>Animations</NavItem>
+      <NavItem onClick={push({
+        route: routes.commonCases
+      })}>Common Use Cases</NavItem>
     </NavGroup>
   </PageView>
 )

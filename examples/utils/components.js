@@ -56,6 +56,12 @@ export const View = styled.div`
   display: ${props => props.noFlex && 'block'};
 `
 
+export const PageView = styled(View)`
+  background: ${oc.gray[1]};
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+`
+
 export const H1 = styled.h1`
   font-size: 3rem;
 `

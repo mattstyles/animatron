@@ -2,7 +2,9 @@
 import { Animate } from './animate'
 import {
   pageDefaultTiming,
-  defaultSlideDistance
+  defaultSlideDistance,
+  defaultScaleDistance,
+  defaultTransitionDelay
 } from './defaults'
 
 import {
@@ -137,7 +139,7 @@ export const AppearIn = ({
   in: inProp,
   timeout,
   defaultStyle,
-  distance,
+  scale,
   delay,
   children,
   ...props
@@ -145,7 +147,7 @@ export const AppearIn = ({
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearInTransition({ timeout, defaultStyle, distance, delay })}
+    transitionStyles={appearInTransition({ timeout, defaultStyle, scale, delay })}
     {...props}
   >
     {children}
@@ -154,14 +156,15 @@ export const AppearIn = ({
 AppearIn.defaultProps = {
   timeout: pageDefaultTiming,
   defaultStyle: {},
-  distance: defaultSlideDistance
+  scale: defaultScaleDistance,
+  delay: defaultTransitionDelay
 }
 
 export const AppearOut = ({
   in: inProp,
   timeout,
   defaultStyle,
-  distance,
+  scale,
   delay,
   children,
   ...props
@@ -169,7 +172,7 @@ export const AppearOut = ({
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearOutTransition({ timeout, defaultStyle, distance, delay })}
+    transitionStyles={appearOutTransition({ timeout, defaultStyle, scale, delay })}
     {...props}
   >
     {children}
@@ -178,5 +181,6 @@ export const AppearOut = ({
 AppearOut.defaultProps = {
   timeout: pageDefaultTiming,
   defaultStyle: {},
-  distance: defaultSlideDistance
+  scale: defaultScaleDistance,
+  delay: defaultTransitionDelay
 }

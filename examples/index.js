@@ -15,14 +15,20 @@ import {
   ModalTransition,
   UsingPageTransitions,
   UsingWithNavigator
-} from './utils/views'
+} from './views/pageViews'
 
 import {
   AnimationView,
   FadeAnimation,
-  AppearAnimation,
-  CascadeAnimation
-} from './utils/animationViews'
+  AppearAnimation
+} from './views/animationViews'
+
+import {
+  CommonCaseView,
+  CascadeAnimation,
+  TooltipCase,
+  ReplaceCase
+} from './views/commonViews'
 
 import {
   PageGroup,
@@ -70,7 +76,10 @@ signal.observe(state => {
         <AnimationView route={routes.animations} />
         <FadeAnimation route={routes.fadeAnimation} />
         <AppearAnimation route={routes.appearAnimation} />
+        <CommonCaseView route={routes.commonCases} />
         <CascadeAnimation route={routes.cascadeAnimation} />
+        <TooltipCase route={routes.tooltip} />
+        <ReplaceCase route={routes.replace} />
       </Navigator>
     </App>,
     el

@@ -1,9 +1,8 @@
 
 import styled from 'styled-components'
-import oc from 'open-color'
 
-import { routes, push, pop } from './navigation'
-import { View, TextBlock, Text, InlineText, Title, NavGroup, NavBack, NavItem, Toggle } from './components'
+import { routes, push, pop } from '../utils/navigation'
+import { PageView, TextBlock, Text, InlineText, Title, NavGroup, NavBack, NavItem, Toggle } from '../utils/components'
 
 import {
   AnimateGroup,
@@ -15,12 +14,6 @@ import {
   AppearIn,
   AppearOut
 } from '../../src'
-
-const PageView = styled(View)`
-  background: ${oc.gray[1]};
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-`
 
 const AppearUpReplace = styled(AppearUp)`
   position: absolute;
@@ -175,28 +168,5 @@ export const AppearAnimation = () => (
     <AnimationType Type={AppearRight} text='Appear Right' />
     <AnimationType Type={AppearIn} text='Appear In' />
     <AnimationType Type={AppearOut} text='Appear Out' />
-  </PageView>
-)
-
-export const CascadeAnimation = () => (
-  <PageView>
-    <Title>Delay Property</Title>
-    <NavGroup>
-      <NavBack onClick={pop({})}>Back</NavBack>
-    </NavGroup>
-    <TextBlock>
-      <AppearRight in appear delay={{
-        enter: 300,
-        exit: 0
-      }}><Text>The <code>appear</code> boolean property defines if this component should appear when mounted.</Text></AppearRight>
-      <AppearRight in appear delay={{
-        enter: 500,
-        exit: 0
-      }}><Text>The <code>delay</code> object property can be applied to stagger entry of subsequent elements.</Text></AppearRight>
-      <AppearRight in appear delay={{
-        enter: 700,
-        exit: 0
-      }}><Text><code>delay</code> accepts an object defining the entry and exit delay i.e. <code>{`{enter: 200, exit: 100}`}</code></Text></AppearRight>
-    </TextBlock>
   </PageView>
 )
