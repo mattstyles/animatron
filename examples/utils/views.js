@@ -2,11 +2,11 @@
 import styled from 'styled-components'
 import oc from 'open-color'
 
-import {routes, push, pop} from './navigation'
-import {View, TextBlock, Text, CodeBlock, Title, NavGroup, NavItem, NavBack} from './components'
-import {SimplePageTransitionExample} from './simpleRoutingExample'
+import { routes, push, pop } from './navigation'
+import { View, TextBlock, Text, CodeBlock, Title, NavGroup, NavItem, NavBack } from './components'
+import { SimplePageTransitionExample } from './simpleRoutingExample'
 
-import {TRANSITIONS} from '../../src'
+import { TRANSITIONS } from '../../src'
 
 const PageView = styled(View)`
   background: ${oc.gray[1]};

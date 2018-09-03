@@ -1,11 +1,11 @@
 
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import oc from 'open-color'
 
-import {Button, TextBlock, Text} from './components'
+import { Button, TextBlock, Text } from './components'
 
-import {TRANSITIONS, PageGroup, PageTransition, childFactory} from '../../src'
+import { TRANSITIONS, PageGroup, PageTransition, childFactory } from '../../src'
 
 const Block = styled.div`
   background: ${oc.gray[8]};
@@ -41,7 +41,7 @@ export class SimplePageTransitionExample extends Component {
             transition: TRANSITIONS.PAGE_IN
           })}>Spartacus</Choice>
         </Block>
-        <Block flush style={{maxHeight: 100}}>
+        <Block flush style={{ maxHeight: 100 }}>
           <TextBlock inverted flush>
             <Text>Rendering component:</Text>
           </TextBlock>

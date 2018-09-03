@@ -1,6 +1,6 @@
 
-import React, {Component, Fragment} from 'react'
-import styled, {injectGlobal} from 'styled-components'
+import React, { Component, Fragment } from 'react'
+import styled, { injectGlobal } from 'styled-components'
 import oc from 'open-color'
 
 const font = `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`
@@ -173,8 +173,8 @@ export class Toggle extends Component {
   }
 
   render () {
-    const {isShowing} = this.state
-    const {children, text, as: As, passProps} = this.props
+    const { isShowing } = this.state
+    const { children, text, as: As, passProps } = this.props
     const contents = As
       ? <As {...passProps}>{children(isShowing)}</As>
       : children(isShowing)

@@ -1,9 +1,9 @@
 
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import {Transition, TransitionGroup} from 'react-transition-group'
+import { Transition, TransitionGroup } from 'react-transition-group'
 
-import {pageDefaultTiming} from './defaults'
+import { pageDefaultTiming } from './defaults'
 
 const Group = styled.div`
   position: relative;

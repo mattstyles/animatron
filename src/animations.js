@@ -1,5 +1,5 @@
 
-import {Animate} from './animate'
+import { Animate } from './animate'
 import {
   pageDefaultTiming,
   defaultSlideDistance
@@ -26,7 +26,7 @@ export const Fade = ({
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={fadeTransition({timeout, defaultStyle, delay})}
+    transitionStyles={fadeTransition({ timeout, defaultStyle, delay })}
     {...props}
   >
     {children}
@@ -49,7 +49,7 @@ export const AppearUp = ({
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearUpTransition({timeout, defaultStyle, distance, delay})}
+    transitionStyles={appearUpTransition({ timeout, defaultStyle, distance, delay })}
     {...props}
   >
     {children}
@@ -73,7 +73,7 @@ export const AppearDown = ({
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearDownTransition({timeout, defaultStyle, distance, delay})}
+    transitionStyles={appearDownTransition({ timeout, defaultStyle, distance, delay })}
     {...props}
   >
     {children}
@@ -97,7 +97,7 @@ export const AppearLeft = ({
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearLeftTransition({timeout, defaultStyle, distance, delay})}
+    transitionStyles={appearLeftTransition({ timeout, defaultStyle, distance, delay })}
     {...props}
   >
     {children}
@@ -121,7 +121,7 @@ export const AppearRight = ({
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearRightTransition({timeout, defaultStyle, distance, delay})}
+    transitionStyles={appearRightTransition({ timeout, defaultStyle, distance, delay })}
     {...props}
   >
     {children}
@@ -145,7 +145,7 @@ export const AppearIn = ({
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearInTransition({timeout, defaultStyle, distance, delay})}
+    transitionStyles={appearInTransition({ timeout, defaultStyle, distance, delay })}
     {...props}
   >
     {children}
@@ -169,7 +169,7 @@ export const AppearOut = ({
   <Animate
     in={inProp}
     timeout={timeout}
-    transitionStyles={appearOutTransition({timeout, defaultStyle, distance, delay})}
+    transitionStyles={appearOutTransition({ timeout, defaultStyle, distance, delay })}
     {...props}
   >
     {children}

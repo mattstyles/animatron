@@ -1,11 +1,11 @@
 
 import React from 'react'
-import {render} from 'react-dom'
-import {compress, safe} from 'raid-addons'
-import {Navigator} from 'raid-navigator'
+import { render } from 'react-dom'
+import { compress, safe } from 'raid-addons'
+import { Navigator } from 'raid-navigator'
 
-import {setGlobalStyling, App} from './utils/components'
-import {signal, events, history, routes} from './utils/navigation'
+import { setGlobalStyling, App } from './utils/components'
+import { signal, events, history, routes } from './utils/navigation'
 import {
   HomeView,
   PageTransitionsView,
@@ -33,7 +33,7 @@ import {
 setGlobalStyling()
 
 signal.register(compress({
-  [events.setTransition]: safe((state, {transition}) => ({
+  [events.setTransition]: safe((state, { transition }) => ({
     ...state,
     transition
   }))

@@ -5,7 +5,7 @@
 
 import React from 'react'
 
-import {PageTransition} from './page'
+import { PageTransition } from './page'
 
 export const mapChildren = child => (
   <PageTransition
@@ -17,4 +17,4 @@ export const mapChildren = child => (
 )
 
 export const childFactory = transition => child =>
-  React.cloneElement(child, {transition})
+  React.cloneElement(child, { transition })

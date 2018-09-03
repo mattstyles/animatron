@@ -2,8 +2,8 @@
 import styled from 'styled-components'
 import oc from 'open-color'
 
-import {routes, push, pop} from './navigation'
-import {View, TextBlock, Text, InlineText, Title, NavGroup, NavBack, NavItem, Toggle} from './components'
+import { routes, push, pop } from './navigation'
+import { View, TextBlock, Text, InlineText, Title, NavGroup, NavBack, NavItem, Toggle } from './components'
 
 import {
   AnimateGroup,
@@ -28,7 +28,7 @@ const AppearUpReplace = styled(AppearUp)`
   left: 0;
 `
 
-const AnimationType = ({Type, text}) => (
+const AnimationType = ({ Type, text }) => (
   <TextBlock>
     <Toggle text={text}>
       {flag => (

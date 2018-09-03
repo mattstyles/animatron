@@ -1,9 +1,9 @@
 
-import {Signal} from 'raid'
-import {createActions} from 'raid-navigator'
+import { Signal } from 'raid'
+import { createActions } from 'raid-navigator'
 import createHistory from 'history/createMemoryHistory'
 
-import {TRANSITIONS} from '../../src'
+import { TRANSITIONS } from '../../src'
 
 export const signal = Signal.of()
 export const history = createHistory()
@@ -36,7 +36,7 @@ export const push = ({
 }) => event => {
   signal.emit({
     type: events.setTransition,
-    payload: {transition}
+    payload: { transition }
   })
   actions.push(route)
 }
@@ -46,7 +46,7 @@ export const pop = ({
 }) => event => {
   signal.emit({
     type: events.setTransition,
-    payload: {transition}
+    payload: { transition }
   })
   actions.back()
 }

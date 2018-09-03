@@ -2,7 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import {TransitionGroup, Transition} from 'react-transition-group'
+import { TransitionGroup, Transition } from 'react-transition-group'
 
 import {
   instantTransition,
@@ -36,14 +36,14 @@ const router = {
   [TRANSITIONS.MODAL_OUT]: modalOutTransition
 }
 
-const getTransition = ({transition, timeout}) => {
+const getTransition = ({ transition, timeout }) => {
   if (!transition || !router[transition]) {
-    return instantTransition({timeout,
+    return instantTransition({ timeout,
       defaultStyle: pageDefaultEnterStyle
     })
   }
 
-  return router[transition]({timeout,
+  return router[transition]({ timeout,
     defaultStyle: pageDefaultEnterStyle
   })
 }
