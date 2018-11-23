@@ -1,35 +1,33 @@
 
 import React, { Component, Fragment } from 'react'
-import styled, { injectGlobal } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import oc from 'open-color'
 
 const font = `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;`
 const monospace = `Source Code Pro, Consolas, monospace`
 
-export const setGlobalStyling = () => {
-  injectGlobal`
-    html {
-      font-size: 10px;
-    }
-    body {
-      margin: 0;
-      background: ${oc.gray[1]};
-      color: ${oc.gray[8]};
-      font-family: ${font};
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      display: flex;
+export const GlobalStyling = createGlobalStyle`
+  html {
+    font-size: 10px;
+  }
+  body {
+    margin: 0;
+    background: ${oc.gray[1]};
+    color: ${oc.gray[8]};
+    font-family: ${font};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
 
-      @media (min-width: 440px) {
-        background: ${`linear-gradient(30deg, ${oc.orange[3]}, ${oc.red[7]} 75%)`};
-      }
+    @media (min-width: 440px) {
+      background: ${`linear-gradient(30deg, ${oc.orange[3]}, ${oc.red[7]} 75%)`};
     }
-    .main {
-      display: flex;
-      flex: 1;
-    }
-  `
-}
+  }
+  .main {
+    display: flex;
+    flex: 1;
+  }
+`
 
 export const App = styled.div`
   display: flex;
