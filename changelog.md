@@ -1,5 +1,10 @@
 
-#
+# 0.3.0
+
+* _update_ babel 7 dependency
+* _update_ styled-components 4 dependency
+
+# 0.2.0
 
 * _add_ expose style helpers
 * _add_ add appear components
